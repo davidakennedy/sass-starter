@@ -1,0 +1,37 @@
+/* Possible project starter */
+.header,
+.main,
+.footer {
+	padding: 1.5em 0;
+	@include clearfix;
+}
+
+.sidebar {
+	padding: 1.5em 0;
+}
+
+.header,
+.content,
+.sidebar,
+.footer {
+    @include columns(12);
+}
+
+@media (min-width:$columnsBreakPoint) {
+	@include column-set;
+
+	.content {
+		@include column;
+		@include columns(8);
+	}
+
+	.sidebar {
+		@include column;
+		@include columns(4);
+	}
+
+	.test .content {
+		@include column;
+		@include columns(12);
+	}
+}
